@@ -111,6 +111,32 @@ As *migrations* são os arquivos criados pelo gerador *devise* para criar as tab
 rails db:migrate
 ```
 
-# I18N - Ativação
+# Instalando o i18n
 ### Internacionalização (necessária) para uso com *devise*
-Adicione ```Gem 'rails-i18n'``` no arquivo *Gemfile* que está localizado na raiz do projeto
+Adicione ```Gem 'rails-i18n'``` no arquivo *Gemfile* que está localizado na raiz do projeto.
+> Após adicionar uma nova ```gem```  para aplica-la deve-se executar o comando ```bundle install```
+
+### Configurando o i18n
+Verificar se o arquivo locale.rb existe no diretório *config/initializers* Se não existir cria-lo e vamos configura-lo conforme a documentacao: [Configure the i18n module](https://guides.rubyonrails.org/i18n.html#configure-the-i18n-module)
+A configuração deve ficar assim:
+```
+# Permitted locales available for the application
+I18n.available_locales = [:en, 'pt-BR']
+ 
+# Set default locale to something other than :en
+I18n.default_locale = "pt-BR"
+```
+### Configurando o i18n para o Devise
+Documentação: [Devise i18n](https://github.com/plataformatec/devise/wiki/I18n).
+Encontre o idioma com sua versão mais atualizada e siga as instruções para aplica-las.
+
+### Configurando o i18n para as Models
+Documentação: [Translation Models](https://guides.rubyonrails.org/i18n.html#translations-for-active-record-models/)
+
+# CONTROLLER
+## Gerando as controller de Admins e Users
+```
+rails g controller admins_backoffice/welcome index
+rails g controller users_backoffice/welcome index
+```
+
