@@ -140,3 +140,5 @@ rails g controller admins_backoffice/welcome index
 rails g controller users_backoffice/welcome index
 ```
 
+### Protegendo as páginas com devise
+O Devise disponibiliza o método para proteger as páginas ```before_action :authenticate_(nome_do_model)!```
